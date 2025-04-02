@@ -29,8 +29,8 @@ import config from './src/site.config.ts'
 // https://astro.build/config
 export default defineConfig({
   // Top-Level Options
-  site: 'https://tgu-hansjack.github.io',
-  base: '/astro-theme-pure',
+  site: 'https://hansjack.com',
+  // base: '/astro-theme-pure',
   trailingSlash: 'never',
 
   // Adapter
