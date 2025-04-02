@@ -30,7 +30,7 @@ import config from './src/site.config.ts'
 export default defineConfig({
   // Top-Level Options
   site: 'https://hansjack.com',
-  base: '/blog',
+  //base: '/blog',
   trailingSlash: 'never',
 
   // Adapter
