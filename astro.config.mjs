@@ -30,7 +30,7 @@ import config from './src/site.config.ts'
 export default defineConfig({
   // Top-Level Options
   site: 'https://tgu-hansjack.github.io',
-  base: '/src/content/blog',
+ // base: '/src/content/blog',
   trailingSlash: 'never',
 
   // Adapter
