@@ -29,7 +29,7 @@ import config from './src/site.config.ts'
 // https://astro.build/config
 export default defineConfig({
   // Top-Level Options
-  site: 'https://hansjack.com',
+  site: 'https://tgu-hansjack.github.io',
   base: '/src/content/blog',
   trailingSlash: 'never',
 
