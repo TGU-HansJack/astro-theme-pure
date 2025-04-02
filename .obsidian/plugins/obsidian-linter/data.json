@@ -32,7 +32,7 @@
     },
     "insert-yaml-attributes": {
       "enabled": true,
-      "text-to-insert": "title:\ndescription:\ndate:\ndraft:"
+      "text-to-insert": "title:\ndescription:\ndate:\ndraft:\nlanguage:\nheroImage: { src: './', color: '#D58388' }"
     },
     "move-tags-to-yaml": {
       "enabled": false,
