@@ -1,5 +1,4 @@
 ---
-draft: 
 title: 'Markdown 语法支持'
 publishDate: 2024-07-26
 description: 'Markdown 是一种轻量级的「标记语言」。'

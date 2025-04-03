@@ -1,5 +1,4 @@
 ---
-draft:
 title: '现代化C语言教程笔记 Frank讲师'
 publishDate: 2025-04-03
 description: '学习Frank老师C语言课程记录笔记'
