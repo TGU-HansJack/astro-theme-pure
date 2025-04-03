@@ -1,11 +1,11 @@
 ---
-title: '天津工业大学 材料专业 23级资料'
+title: 天津工业大学 材料专业 23级资料
 publishDate: 2025-04-03
-description: '整理材料专业课程的网盘资料，来自本人天津工业大学材料专业的百度网盘资料'
+description: 整理材料专业课程的网盘资料，来自本人天津工业大学材料专业的百度网盘资料
 tags:
   - 网盘资料
   - 材料专业
-language: '简体中文'
+language: 简体中文
 heroImage: { src: './tgu-23-pan.jpg', color: '#76156f' }
 ---
 

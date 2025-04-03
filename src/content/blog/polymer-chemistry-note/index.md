@@ -1,10 +1,10 @@
 ---
-title: 'TGU高分子化学笔记(Polymer Chemistry)'
+title: TGU高分子化学笔记(Polymer Chemistry)
 publishDate: 2025-04-01
-description: '感谢陈熙（教授）的课程，非常喜欢！课件版权归于授课老师，感谢陈熙教授的教课，学到很多，请勿侵权，侵权必究'
+description: 感谢陈熙（教授）的课程，非常喜欢！课件版权归于授课老师，感谢陈熙教授的教课，学到很多，请勿侵权，侵权必究
 tags:
   - Polymer Chemistry
-language: '简体中文'
+language: 简体中文
 heroImage: { src: './tgu-23-pan.jpg', color: '#76156f' }
 ---
 
