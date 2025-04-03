@@ -1,11 +1,11 @@
 ---
-title: 'What Is 3D Rendering? Complete Guide to 3D Visualization'
-publishDate: 2024-12-09
-description: '3D imagery has the power to bring cinematic visions to life and help accurately plan tomorrow’s cityscapes. Here, 3D expert Ricardo Ortiz explains how it works.'
+title: '天津工业大学 材料专业 23级资料'
+publishDate: 2025-04-03
+description: '整理材料专业课程的网盘资料，来自本人天津工业大学材料专业的百度网盘资料'
 tags:
-  - Example
-  - 3D
-language: 'English'
+  - 网盘资料
+  - 材料专业
+language: '简体中文'
 heroImage: { src: './thumbnail.jpg', color: '#D58388' }
 ---
 
