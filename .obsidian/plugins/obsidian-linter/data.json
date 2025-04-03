@@ -12,7 +12,7 @@
     },
     "escape-yaml-special-characters": {
       "enabled": false,
-      "try-to-escape-single-line-arrays": false
+      "try-to-escape-single-line-arrays": true
     },
     "force-yaml-escape": {
       "enabled": false,
@@ -32,7 +32,7 @@
     },
     "insert-yaml-attributes": {
       "enabled": true,
-      "text-to-insert": "title:\ndescription:\ndate:\ndraft:\nlanguage:\nheroImage: { src: './', color: '#D58388' }"
+      "text-to-insert": "title: ''\ndescription: ''\npublishDate: ''\ntags: ['', '']\nheroImage: {\"src\": \"./\", \"color\": \"#B4C6DA\"}\ndraft: false\nlanguage: 'English'\ncomment: true"
     },
     "move-tags-to-yaml": {
       "enabled": false,
@@ -270,7 +270,7 @@
       "enabled": false
     }
   },
-  "lintOnSave": false,
+  "lintOnSave": true,
   "recordLintOnSaveLogs": false,
   "displayChanged": true,
   "lintOnFileChange": false,
@@ -286,7 +286,7 @@
     "aliasArrayStyle": "single-line",
     "tagArrayStyle": "single-line",
     "minimumNumberOfDollarSignsToBeAMathBlock": 2,
-    "escapeCharacter": "\"",
+    "escapeCharacter": "'",
     "removeUnnecessaryEscapeCharsForMultiLineArrays": false
   }
 }
