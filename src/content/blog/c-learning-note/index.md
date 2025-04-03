@@ -2,11 +2,12 @@
 title: 现代化C语言教程笔记 Frank讲师
 publishDate: 2025-04-03
 description: 学习Frank老师C语言课程记录笔记
-draft: false
 language: 简体中文
 heroImage:
   src: ./C.png
   color: "#659ad3"
+tags:
+  - C
 ---
 > **感谢Frank 为广大学生打开了进入现代化C语言的大门**
 
