@@ -1,7 +1,7 @@
 ---
 import { cn } from '../../utils'
 
-const { as: Tag = 'div', class: className, href, heading, subheading, date, imagePath, imageClass, altText } = Astro.props
+const { as: Tag = 'div', class: className, href, heading, subheading, date, imagePath, imageClass = '', altText = '' } = Astro.props
 ---
 
 <Tag
