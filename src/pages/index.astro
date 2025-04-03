@@ -119,12 +119,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       }
       <Section title='Education'>
         <Card
-          as='a'
           heading='天津工业大学'
           subheading='就读天津工业大学材料专业 目前本科生'
           date='September 2023 - Today'
           href='https://www.tiangong.edu.cn/'
           imagePath='/src/assets/projects/tiangong.png'
+          altText='TGU'
+          imageClass='h-12 w-auto md:-start-16'
         >
           {
             /* <ul class='ms-4 list-disc text-muted-foreground'>
