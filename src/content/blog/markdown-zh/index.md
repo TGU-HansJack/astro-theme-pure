@@ -1,12 +1,12 @@
 ---
 draft: 
-title: Markdown 语法支持
-publishDate: 2024-07-26 08:00:00
-description: Markdown 是一种轻量级的「标记语言」。
+title: 'Markdown 语法支持'
+publishDate: 2024-07-26
+description: 'Markdown 是一种轻量级的「标记语言」。'
 tags:
   - Markdown
-heroImage: "{ src: './thumbnail.jpg'  color: '#B4C6DA' }"
-language: 简体中文
+heroImage: { src: './thumbnail.jpg',  color: '#B4C6DA' }
+language: '简体中文'
 ---
 
 ## 基本语法
