@@ -1,7 +1,7 @@
 ---
 import { cn } from '../../utils'
 
-const { as: Tag = 'div', class: className, href, heading, subheading, date, imagePath, imageClass = '', altText = '' } = Astro.props
+const { as: Tag = 'div', class: className, href, heading, subheading, date } = Astro.props
 ---
 
 <Tag
@@ -20,18 +20,4 @@ const { as: Tag = 'div', class: className, href, heading, subheading, date, imag
     </div>
     <slot />
   </div>
-
-    
-  {/* 新增图片渲染逻辑 */}
-  {imagePath && (
-    <img 
-      src={imagePath}
-      alt={altText}
-      class={cn(
-        'absolute end-0 z-0 m-0 -my-3 h-full w-1/2 object-cover opacity-40 rounded-[inherit]',
-        imageClass
-      )}
-    />
-  )}
-
 </Tag>
