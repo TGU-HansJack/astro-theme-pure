@@ -79,3 +79,4 @@ bunfig.toml
 /src/content/blog/test.*
 /test/
 /.obsidian
+.obsidian/workspace.json
