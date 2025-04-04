@@ -9,7 +9,9 @@ language: '简体中文'
 comment: true
 ---
 
-### 步骤 1：创建目录并下载必要文件
+# 部署过程
+
+## 步骤 1：创建目录并下载必要文件
 
 首先，打开终端并执行以下命令以创建必要的目录结构：
 
@@ -17,7 +19,7 @@ comment: true
 mkdir -p ./surveyking/mysqlmkdir ./surveyking/sqlscd ./surveyking
 ```
 
-### 步骤 2：下载初始化 SQL 文件和 Docker Compose 文件
+## 步骤 2：下载初始化 SQL 文件和 Docker Compose 文件
 
 接下来，我们将下载初始化 MySQL 数据库所需的 SQL 文件和 Docker Compose 配置文件：
 
@@ -26,7 +28,7 @@ curl -o sqls/init-mysql.sql https://surveyking.cn/surveyking-docker/sqls/init-my
 curl -o docker-compose.yml https://surveyking.cn/surveyking-docker/docker-compose.yml.example
 ```
 
-### 步骤 3：启动 Docker 容器
+## 步骤 3：启动 Docker 容器
 
 现在，我们将使用 Docker Compose 启动 SurveyKing 应用程序的容器。确保已经安装了 Docker 和 Docker Compose。执行以下命令：
 
