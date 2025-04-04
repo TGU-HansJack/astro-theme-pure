@@ -1,5 +1,4 @@
 ---
-heroImage: {"src": "./", "color": "#B4C6DA"}
 title: 梦境 回忆
 description: 我的梦
 publishDate: 2025-04-04 18:00
