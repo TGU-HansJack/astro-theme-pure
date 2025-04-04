@@ -1,11 +1,3 @@
 {
-  "newFileLocation": "folder",
-  "useMarkdownLinks": true,
-  "newFileFolderPath": "src/content/blog",
-  "newLinkFormat": "absolute",
-  "attachmentFolderPath": "public/images",
-  "propertiesInDocument": "source",
-  "smartIndentList": false,
-  "autoPairMarkdown": false,
-  "autoPairBrackets": false
+  "propertiesInDocument": "source"
 }

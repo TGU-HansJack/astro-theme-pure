@@ -1,6 +1,6 @@
 ---
 heroImage: {"src": "./outline.png", "color": "#B4C6DA"}
-title: Docker部署Outline 使用Github OAuth和MinIO
+title: Docker部署 Outline 使用Github OAuth和MinIO
 description: Docker快速部署Outline知识库，并且通过Github OAuth作为OAuth服务，使用MinIO作为存储
 publishDate: 2025-04-04 13:31
 tags:
