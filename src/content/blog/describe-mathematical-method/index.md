@@ -3,7 +3,6 @@ title: '简单叙述 数学方法 学习中'
 description: '简单说一下我遇到的数学方法，遇到就学习或者拾起记忆。'
 publishDate: '2025-04-05 17:28'
 tags: ['数学方法', '笔记']
-heroImage: {"src": "./", "color": "#B4C6DA"}
 draft: false
 language: '简体中文'
 comment: true
