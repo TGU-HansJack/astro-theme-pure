@@ -6,6 +6,7 @@ tags:
   - Markdown
 heroImage: { src: './thumbnail.jpg',  color: '#B4C6DA' }
 language: 简体中文
+comment: false
 ---
 
 ## 基本语法

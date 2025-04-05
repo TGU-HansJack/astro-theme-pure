@@ -8,7 +8,7 @@ tags:
 heroImage: {"src": "./howtoread.avif", "color": "#171717"}
 draft: false
 language: 简体中文
-comment: true
+comment: false
 ---
 
 # 一、前言：视觉的刺激

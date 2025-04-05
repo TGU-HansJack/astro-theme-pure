@@ -2,7 +2,7 @@
 heroImage: {"src": "./C.png", "color": "#B4C6DA"}
 tags: ['C语言', '笔记']
 draft: false
-comment: true
+comment: false
 title: '现代化C语言教程笔记 Frank讲师'
 publishDate: '2024-07-26 08:00:00'
 description: '学习Frank老师C语言课程记录笔记'

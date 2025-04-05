@@ -6,7 +6,7 @@ tags: ['Docker', 'SurveyKing']
 heroImage: { src: './survey.png', color: '#B4C6DA' }
 draft: false
 language: '简体中文'
-comment: true
+comment: false
 ---
 
 # 部署过程
