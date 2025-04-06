@@ -91,7 +91,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
       { name: 'Link', val: 'https://hansjack.com/' },
-      { name: 'Avatar', val: 'https://hansjack.com/favicon/favicon.ico' }
+      { name: 'Avatar', val: 'https://hansjack.com/favicon/avatar.png' }
     ]
   },
   // Enable page search function
