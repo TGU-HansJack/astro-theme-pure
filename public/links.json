@@ -17,6 +17,12 @@
           "avatar": "https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200"
         },
         {
+          "name": "关于IFDESS的书",
+          "intro": "这是一本记录IFDESS的经历和感悟的书。",
+          "link": "https://ifdess.cn/",
+          "avatar": "https://static.ifdess.cn/img/avatar.jpg"
+        },
+        {
           "name": "南蛮子懋和",
           "intro": "李懋和，俗名李栋梁。书法、国画爱好者，互联网安全与前端建设者。",
           "link": "https://www.dao.js.cn/",
