@@ -141,17 +141,24 @@ XeLateX可以处理中文
 ![](./515ba7261c2005bafe5c0eed89bcf6cc_MD5.jpeg)
 
 
-在界面上直接新建：
-![](8986534c7e27c10d683d828898b48a70_MD5.jpeg)
-
-我们保存项目在一个文件夹里面，英文取名（在保存时会生成一些中间文件）
-![](6f5c63c24a18e2fb88e525ed6616675e_MD5.jpeg)
-
-
-会有提示：
+编写会有提示：
 ![](ee1dae1209f51379ba2f64f0ac357fc5_MD5.jpeg)
 
+
+
+## 第二节：LaTeX源文件的基本结构
 使用宏包ctex进行中文编码（注意文件使用UTF-8）
+
+### 1、学会保存
+
+在界面上直接新建：
+![](./8986534c7e27c10d683d828898b48a70_MD5.jpeg)
+
+我们保存项目在一个文件夹里面，英文取名（在保存时会生成一些中间文件）
+![](./6f5c63c24a18e2fb88e525ed6616675e_MD5.jpeg)
+
+
+### 2、结构参考输入
 
 ```
 % 导言区
@@ -169,10 +176,38 @@ XeLateX可以处理中文
 \begin{document}
 	\maketitle % 输出标题信息
 	文本
-	
+	% 默认需要空一行来换行
 	数学公式：$$\overline{M}_v=\left( \frac{\sum{m_iM_{i}^{\alpha}}}{\sum{m_i}} \right) ^{1/\alpha}=\left( \frac{\sum{n_iM_{i}^{\alpha +1}}}{\sum{n_iM_i}} \right) ^{1/\alpha}$$
 \end{document}
 ```
 
 
+## 第三节：LaTeX中的中文处理办法
+
+### 1、前提：
+使用UTF-8，编译器选择XeLaTeX
+
+![](./Pasted%20image%2020250410145545.png)
+
+### 2、使用宏包并查看文档
+
+
+我们使用ctex宏包进行编写中文
+
+```
+\usepackage{ctex}
+```
+
+我们也可以直接使用
+```
+\documentclass{ctexart}% ctexbook, ctexrep
+% 显然没有letter格式
+```
+
+为什么可以这样？我们通过命令可以查看相关文档：
+
+```
+texdoc lshort-zh
+texdoc cetex
+```
 
