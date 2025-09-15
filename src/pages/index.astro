@@ -142,36 +142,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         </Card>
       </Section>
 
-      <Section title='Website List'>
-        <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
-          <ProjectCard
-            href='https://bbs.tiango.wiki'
-            heading='Tiango Wiki BBS'
-            subheading='致力于Wiki开放、知识共享与学术交流，聚合研究资源、学习资料与经验分享，提供资源互助与社区活动，打造开放式知识交流平台，助力研究与协作发展的非盈利性论坛'
-            imagePath='/src/assets/projects/tiango-page.png'
-          />
-          <ProjectCard
-            href='https://www.hansjack.com/'
-            heading='寒士杰克博客'
-            subheading='喜欢捣鼓，不断进步！'
-            imagePath='/src/assets/projects/hansjack-page.png'
-          />
-          <ProjectCard
-            href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            heading='Lorem ipsum'
-            subheading='dolor sit amet, oratio ornatus explicari pro ex'
-            imagePath='/src/assets/projects/kseniia-zapiatkina-yATU3rg8tNI-unsplash.jpg'
-          />
-          <ProjectCard
-            href='/projects'
-            heading='More projects'
-            subheading='Check out more projects'
-            imagePath='/src/assets/projects/wen-qiao-g_w8I64FiO0-unsplash.jpg'
-          />
-        </div>
-      </Section>
-
-
       <Section title='Skills'>
         <SkillLayout title='Languages' skills={languages} />
         <SkillLayout title='Frontend' skills={frontend} />
