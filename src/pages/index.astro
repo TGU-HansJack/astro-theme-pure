@@ -65,16 +65,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
-      <Section title='About'>
+      <Section title='关于本站'>
         <p class='text-muted-foreground'>材料专业 / 程序员</p>
         <p class='text-muted-foreground'>
           欢迎来到本站 👋 ，本站使用Astro搭建，主题astro-theme-pure，Vercel部署，记录科研、网站部署、生活杂记等内容。
         </p>
-        <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
+        <Button title='了解更多' class='w-fit self-end' href='/about' variant='ahead' />
       </Section>
       {
         allPostsByDate.length > 0 && (
-          <Section title='Posts'>
+          <Section title='最新文章'>
             <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
               {allPostsByDate.map((p) => (
                 <li class='flex flex-col gap-x-2 sm:flex-row'>
@@ -116,7 +116,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       />
     </Section> */
       }
-      <Section title='Education'>
+      <Section title='教育经历'>
         <Card
           as='a'
           heading='Lorem ipsum'
@@ -136,7 +136,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         </Card>
       </Section>
 
-      <Section title='Website List'>
+      <Section title='部署项目'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
             href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -165,7 +165,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         </div>
       </Section>
 
-      <Section title='Certifications'>
+{ /* 
+
+      <Section title='其他平台'>
         <Card
           as='a'
           heading='Lorem ipsum'
@@ -175,10 +177,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         />
       </Section>
 
-      <Section title='Skills'>
-        <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
+*/
+}
+
+
+      <Section title='技能墙'>
+        <SkillLayout title='语言' skills={languages} />
+        <SkillLayout title='前端' skills={frontend} />
+        <SkillLayout title='后端' skills={backend} />
       </Section>
     </div>
     <Quote class='mt-12' />
