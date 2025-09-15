@@ -63,13 +63,13 @@ export const theme: ThemeUserConfig = {
     links: [
       // Registration link
       {
-        title: 'Moe ICP 114514',
-        link: 'https://icp.gov.moe/?keyword=114514',
+        title: '津ICP备2025036798号-1',
+        link: 'https://beian.miit.gov.cn/',
         style: 'text-sm' // Uno/TW CSS class
       },
       {
-        title: 'Travelling',
-        link: 'https://www.travellings.cn/go.html',
+        title: '津公网安备12011102001759号',
+        link: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12011102001759',
         style: 'text-sm'
       },
       // Privacy Policy link
