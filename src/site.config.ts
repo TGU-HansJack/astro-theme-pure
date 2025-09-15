@@ -62,7 +62,7 @@ export const theme: ThemeUserConfig = {
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
       // Registration link
-      {
+     /* {
         title: '津ICP备2025036798号-1',
         link: 'https://beian.miit.gov.cn/',
         style: 'text-sm' // Uno/TW CSS class
@@ -71,7 +71,7 @@ export const theme: ThemeUserConfig = {
         title: '津公网安备12011102001759号',
         link: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12011102001759',
         style: 'text-sm'
-      },
+      },*/
       // Privacy Policy link
       {
         title: 'Site Policy',
