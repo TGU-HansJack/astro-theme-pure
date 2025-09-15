@@ -1,18 +1,18 @@
 ---
-title: 'Friend Links'
-description: 'Configurations for friend links'
+title: '友情链接'
+description: '友情链接配置'
 order: 4
 ---
 
 import { Steps } from 'astro-pure/user'
 
-## Remove Links Page
+## 移除链接页面
 
-Links page is a page for showing your friend blog links, which is enabled by default.
+链接页面是用于展示你的友链博客链接的页面，默认启用。
 
-If you want to remove the links page for any reason, follow the steps in this section. Otherwise, you can skip ahead to the next chapter.
+如果你因任何原因想要移除链接页面，请按照本节中的步骤操作。否则，可以跳到下一章。
 
-Set `links.enable` to `false` in `src/site.config.ts`:
+在 `src/site.config.ts` 中将 `links.enable` 设置为 `false`:
 
 ```ts title="src/site.config.ts"
 export const integ: IntegrationUserConfig = {
@@ -23,31 +23,31 @@ export const integ: IntegrationUserConfig = {
 }
 ```
 
-And also, remember to delete the following folders & files:
+另外，记得删除以下文件夹和文件:
 
 - `src/components/links/`
 - `src/pages/links/`
 - `public/links.json`
 
-## Basic Configurations
+## 基本配置
 
-A basic configuration for friend links is in `src/site.config.ts`. You can add your friend's logbook or your own link info.
+友情链接的基本配置在 `src/site.config.ts` 中。你可以添加你朋友的博客链接或你自己的链接信息。
 
 ```ts title="src/site.config.ts"
 export const integ: IntegrationUserConfig = {
   links: {
-    // Friend logbook
+    // 朋友圈日志
     logbook: [
-      { date: '2025-03-16', content: 'Is there a leakage?' },
-      { date: '2025-03-16', content: 'A leakage of what?' },
-      { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
-      { date: '2025-03-16', content: 'Must be the water.' },
-      { date: '2025-03-16', content: 'Let\'s add that to the words of wisdom.' },
+      { date: '2025-03-16', content: '是不是有泄漏？' },
+      { date: '2025-03-16', content: '泄漏什么？' },
+      { date: '2025-03-16', content: '我有一整座水，就像，满满的水！' },
+      { date: '2025-03-16', content: '一定是水的问题。' },
+      { date: '2025-03-16', content: '我们把这句话加到智慧语录里。' },
     ],
-    // Yourself link info
+    // 你自己链接信息
     applyTip: {
       name: theme.title,
-      desc: theme.description || 'Null',
+      desc: theme.description || '空',
       url: 'https://astro-pure.js.org/',
       avatar: 'https://astro-pure.js.org/favicon/favicon.ico'
     }
@@ -55,86 +55,86 @@ export const integ: IntegrationUserConfig = {
 }
 ```
 
-## Friend Links
+## 友情链接
 
-The friend links configurations are at `public/links.json`.
+友情链接配置在 `public/links.json`。
 
 ```json title="public/links.json"
 {
   "friends": [
     {
       "id_name": "cf-links",
-      "desc": "Common links included in circle friends",
+      "desc": "朋友圈中包含的通用链接",
       "link_list": [
         { // [!code highlight:6]
           "name": "Elysia",
-          "intro": "Hi, did you miss me? Anywhere and anytime, Elysia will return all your expectations.",
+          "intro": "嗨，你想我了吗？无论何时何地，Elysia都会满足你所有的期望。",
           "link": "https://honkaiimpact3.fandom.com/wiki/Elysia",
           "avatar": "https://0.gravatar.com/avatar/"
-          // Here you can also leave some other fields as notes
+          // 这里你也可以留下一些其他字段作为备注
         },
       ]
     },
     {
       "id_name": "inactive-links",
-      "desc": "Inactive or rule-breaking friends",
-      "link_list": [] // you can temporarily leave some bad links here
+      "desc": "不活跃或违规的朋友",
+      "link_list": [] // 你可以暂时将一些不良链接放在这里
     },
     {
       "id_name": "special-links",
-      "desc": "Other special links",
-      "link_list": [] // special links which are note your friends
+      "desc": "其他特殊链接",
+      "link_list": [] // 特殊链接，不是你的朋友
     }
   ]
 }
 ```
 
-## Integrated with `Friend-Circle-Lite`
+## 与`Friend-Circle-Lite`集成
 
-[Friend-Circle-Lite](https://github.com/willow-god/Friend-Circle-Lite) is a stripped-down friend-link app with no backend and running only using github action.
+[Friend-Circle-Lite](https://github.com/willow-god/Friend-Circle-Lite)是一个精简的友链应用，无后端，仅使用github action运行。
 
-It requires:
+它需要:
 
-1. A github repository with github actions enabled by cron.
-2. A static site server like Vercel, Netlify, GitHub Pages, etc.
+1. 启用cron的github仓库和github actions。
+2. 静态站点服务器如Vercel、Netlify、GitHub Pages等。
 
-This theme has not integrated it and will not provide support for it in the future. But don't worry, this doc will guide you to integrate it.
+本主题未集成它，未来也不会提供支持。但不用担心，本文档将指导你完成集成。
 
 <Steps>
 
-1. Fork the [Friend-Circle-Lite](https://github.com/cworld1/friend-circle-lite).
-2. Modify the `config.yaml` in your forked repository:
+1. Fork [Friend-Circle-Lite](https://github.com/cworld1/friend-circle-lite)。
+2. 修改你fork仓库中的 `config.yaml`:
 
    ```yaml title="config.yaml"
    spider_settings:
       enable: true
-      json_url: "<your-site>/links.json" # [!code highlight]
+      json_url: "<你的站点>/links.json" // [!code highlight]
       article_count: 4
    ```
 
-3. Go to "Actions" page and run workflow "Friend Circle Lite" manually to check if it works. This will also generate server files in "page" branch.
+3. 转到"Actions"页面并手动运行"Friend Circle Lite"工作流以检查是否正常工作。这也会在"page"分支中生成服务器文件。
 
-4. Checkout [docs](https://github.com/willow-god/Friend-Circle-Lite?tab=readme-ov-file#%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99) to deploy the server files to your static site server.
+4. 查看[文档](https://github.com/willow-god/Friend-Circle-Lite?tab=readme-ov-file#%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99)将服务器文件部署到你的静态站点服务器。
 
-5. Add [fetching script file `friendCircle.ts`](https://gist.github.com/cworld1/cf0dc6daa89264e6d745d3e68ef8c01c) to your project at path `src/plugins`.
+5. 将[获取脚本文件 `friendCircle.ts`](https://gist.github.com/cworld1/cf0dc6daa89264e6d745d3e68ef8c01c)添加到你的项目路径 `src/plugins`。
 
-6. Add [style file `fc.css`](https://gist.github.com/cworld1/cf0dc6daa89264e6d745d3e68ef8c01c?permalink_comment_id=5311916#gistcomment-5311916) to your project at path `src/assets/styles`.
+6. 将[样式文件 `fc.css`](https://gist.github.com/cworld1/cf0dc6daa89264e6d745d3e68ef8c01c?permalink_comment_id=5311916#gistcomment-5311916)添加到你的项目路径 `src/assets/styles`。
 
-7. Add initialize code in `src/components/pages/links/index.astro`:
+7. 在 `src/components/pages/links/index.astro` 中添加初始化代码:
 
    ```astro title="src/components/pages/links/index.astro"
    ---
    const headings = [
       // ...
-      { depth: 2, slug: 'small-circle', text: 'Small Circle' }, // [!code highlight]
+      { depth: 2, slug: 'small-circle', text: '小圈子' }, // [!code highlight]
    ]
    ---
 
    <PageLayout>
       {/* ... */}
       <!-- [!code highlight:16] -->
-      <h2 id='small-circle'>Small Circle</h2>
-      <div id='friend-circle-lite-root' class='not-prose'>Loading...</div>
+      <h2 id='small-circle'>小圈子</h2>
+      <div id='friend-circle-lite-root' class='not-prose'>加载中...</div>
       <script>
          import '@/assets/styles/fc.css'
 
@@ -142,7 +142,7 @@ This theme has not integrated it and will not provide support for it in the futu
 
          const fc = new FriendCircle()
          fc.init({
-            private_api_url: '<your-fc-lite-server>',
+            private_api_url: '<你的fc-lite服务器>',
             page_turning_number: 10,
             error_img: 'https://cravatar.cn/avatar/57d8260dfb55501c37dde588e7c3852c'
          })
@@ -152,4 +152,3 @@ This theme has not integrated it and will not provide support for it in the futu
    ```
 
 </Steps>
-

@@ -1,16 +1,16 @@
 ---
-title: 'Advanced Components'
-description: 'Advanced components with advanced docs'
+title: '高级组件'
+description: '带有高级文档的高级组件'
 order: 2
 ---
 
 import { MdxRepl } from 'astro-pure/user'
 
-## Web Content Render
+## 网页内容渲染
 
-### Quote
+### 引用
 
-The `Quote` component is a simple component that displays a random quote.
+`Quote` 组件是一个简单的组件，用于显示随机引用。
 
 
 <MdxRepl>
@@ -27,36 +27,36 @@ import { Quote } from 'astro-pure/advanced'
 </Fragment>
 </MdxRepl>
 
-Config:
+配置:
 
 ```ts title="src/site.config.ts"
 export const integ: IntegrationUserConfig = {
-  // Add a random quote to the footer (default on homepage footer)
+  // 在页脚添加随机引用（默认在首页页脚）
   quote: {
     // https://github.com/lukePeavey/quotable
     server: 'https://api.quotable.io/quotes/random?maxLength=60', // [!code highlight:2]
-    target: `(data) => data[0].content || 'Error'`
+    target: `(data) => data[0].content || '错误'`
   }
 }
 ```
 
-[Quotable](https://github.com/lukePeavey/quotable) is a open-source API that provides random English quotes.
+[Quotable](https://github.com/lukePeavey/quotable) 是一个提供随机英文引用的开源API。
 
-For Chinese quotes, you can use [Hitokoto](https://developer.hitokoto.cn/sentence/).
+对于中文引用，你可以使用[Hitokoto](https://developer.hitokoto.cn/sentence/)。
 
 ```ts title="src/site.config.ts"
 export const integ: IntegrationUserConfig = {
   quote: {
     // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
     server: 'https://v1.hitokoto.cn/?c=i', // [!code highlight:2]
-    target: `(data) => data.hitokoto || 'Error'`
+    target: `(data) => data.hitokoto || '错误'`
   }
 }
 ```
 
-### GitHub Card
+### GitHub卡片
 
-The `GithubCard` component is a simple component that displays a GitHub user card.
+`GithubCard` 组件是一个简单的组件，用于显示GitHub用户卡片。
 
 <MdxRepl width='80%'>
 import { GithubCard } from 'astro-pure/advanced'
@@ -72,9 +72,9 @@ import { GithubCard } from 'astro-pure/advanced'
 </Fragment>
 </MdxRepl>
 
-### Link Preview
+### 链接预览
 
-Preview any link inserted in the content.
+预览内容中插入的任何链接。
 
 <MdxRepl width='80%'>
 import { LinkPreview } from 'astro-pure/advanced'
@@ -87,16 +87,16 @@ import { LinkPreview } from 'astro-pure/advanced'
 import { LinkPreview } from 'astro-pure/advanced'
 
 <LinkPreview href='https://www.cloudflare.com/' />
-// `zoomable` option will control mediumzoom tag
+// `zoomable` 选项将控制mediumzoom标签
 // <LinkPreview href='https://www.cloudflare.com/' zoomable={false} />
 <LinkPreview href='https://www.cloudflare.com/' hideMedia />
 ```
 </Fragment>
 </MdxRepl>
 
-## Data Transformer
+## 数据转换器
 
-### QRCode
+### 二维码
 
 <MdxRepl>
 import { QRCode } from 'astro-pure/advanced'
@@ -109,7 +109,7 @@ import { QRCode } from 'astro-pure/advanced'
 ```jsx
 import { QRCode } from 'astro-pure/advanced'
 
-// <QRCode /> // default to render current page link
+// <QRCode /> // 默认渲染当前页面链接
 <QRCode
   content='https://github.com/cworld1/astro-theme-pure'
   class='inline-flex max-w-44 p-3 bg-muted rounded-lg border' />
@@ -117,10 +117,10 @@ import { QRCode } from 'astro-pure/advanced'
 </Fragment>
 </MdxRepl>
 
-### Medium Zoom
+### 中等缩放
 
-Try click the following image.
+尝试点击下面的图片。
 
 ![img](https://github.com/user-attachments/assets/6c42b061-df7e-4696-a29b-bff07fe17d88)
 
-See [Other Integrations#medium-zoom](/docs/integrations/others#medium-zoom).
+参见[其他集成#medium-zoom](/docs/integrations/others#medium-zoom)。

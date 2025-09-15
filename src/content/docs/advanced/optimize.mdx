@@ -1,27 +1,27 @@
 ---
-title: 'Optimize Your Site'
-description: 'Improve your site performance and user experience'
+title: '优化你的网站'
+description: '提升网站性能和用户体验'
 order: 3
 ---
 
 import { Aside } from 'astro-pure/user'
 
-## Integrations
+## 集成
 
-This theme has integrated with:
+本主题已集成：
 
-- `sharp`: image optimization
-- [`@playform/compress`](/docs/integrations/others#playformcompress): HTML, CSS, JS, images minify
+- `sharp`：图片优化
+- [`@playform/compress`](/docs/integrations/others#playformcompress)：HTML、CSS、JS、图片压缩
 
 ## CDN
 
-Some light-weighted libraries are using js static links. You can configure CDN links to improve your site performance.
+一些轻量级库使用js静态链接。你可以配置CDN链接来提升网站性能。
 
 ```ts title="src/site.config.ts"
 export const theme: ThemeUserConfig = {
   // ...
   npmCDN: 'https://cdn.jsdelivr.net/npm'
-  // Recommend:
+  // 推荐:
   // - https://cdn.jsdelivr.net/npm
   // - https://cdn.smartcis.cn/npm
   // - https://unkpg.com
@@ -29,56 +29,55 @@ export const theme: ThemeUserConfig = {
 }
 ```
 
-## Coding
+## 编码
 
-It is a good way to use "Typescript-like" syntax comment in your `.astro` files. It can ensure your comment will not be rendered in the final production HTML file.
+在 `.astro` 文件中使用"类Typescript"语法注释是一个好方法。它可以确保你的注释不会在最终生产HTML文件中渲染。
 
 ```astro
 ---
-// Here is a safe place to put your comment
+// 这里是放置注释的安全位置
 import { AstroComponent } from '@/components'
 ---
 
 <div>
-  <!-- This is a bad comment style which will still in the production -->
-  {/* This is a better comment style */}
+  <!-- 这是不好的注释风格，会在生产环境中保留 -->
+  {/* 这是更好的注释风格 */}
   <AstroComponent>Hello, Astro!</AstroComponent>
 </div>
 ```
 
-## Pictures
+## 图片
 
-### Use optimized component
+### 使用优化组件
 
-Display optimized images with the `<Image />` component: [Use the built-in `<Image />` Astro component](https://docs.astro.build/en/guides/images/#display-optimized-images-with-the-image--component) to display optimized versions of:
+使用 `<Image />` 组件显示优化图片：[使用内置的 `<Image />` Astro组件](https://docs.astro.build/en/guides/images/#display-optimized-images-with-the-image--component) 来显示优化版本：
 
-- your local images located within the src/ folder
-- configured remote images from authorized sources
+- 位于src/文件夹中的本地图片
+- 来自授权源的已配置远程图片
 
-`<Image />` can transform a local or authorized remote image’s dimensions, file type, and quality for control over your displayed image. The resulting `<img>` tag includes alt, loading, and decoding attributes and infers image dimensions to avoid Cumulative Layout Shift (CLS).
+`<Image />` 可以转换本地或授权远程图片的尺寸、文件类型和质量，以控制显示的图片。生成的 `<img>` 标签包含 alt、loading 和 decoding 属性，并推断图片尺寸以避免累积布局偏移(CLS)。
 
-<Aside title='What is Cumulative Layout Shift?'>
-  Cumulative Layout Shift (CLS) is a Core Web Vital metric for measuring how much content shifted on
-  your page during loading. The `<Image />` component optimizes for CLS by automatically setting the
-  correct width and height for your images.
+<Aside title='什么是累积布局偏移？'>
+  累积布局偏移(CLS)是衡量页面加载期间内容移动程度的核心网页指标。
+  `<Image />` 组件通过自动设置图片的正确宽度和高度来优化CLS。
 </Aside>
 
-You can use `loading="lazy"` to enable lazy loading for images.
+你可以使用 `loading="lazy"` 来启用图片懒加载。
 
 ```astro title="src/pages/somepage.astro"
 ---
-// import the Image component and the image
+// 导入Image组件和图片
 import { Image } from 'astro:assets'
 
-import myImage from '../assets/my_image.png' // Image is 1600x900
+import myImage from '../assets/my_image.png' // 图片尺寸为 1600x900
 ---
 
-<!-- `alt` is mandatory on the Image component -->
-<Image src={myImage} alt='A description of my image.' />
+<!-- `alt` 在Image组件中是必需的 -->
+<Image src={myImage} alt='我的图片描述。' />
 ```
 
 ```html
-<!-- Output -->
+<!-- 输出 -->
 <img
   src="/_astro/my_image.hash.webp"
   width="1600"
@@ -90,26 +89,26 @@ import myImage from '../assets/my_image.png' // Image is 1600x900
 />
 ```
 
-Using this, it will transform your images to a WebP format. `.md` and `.mdx` files are enabled default.
+使用此方法，它会将你的图片转换为WebP格式。`.md` 和 `.mdx` 文件默认启用。
 
-### Change Image Size
+### 更改图片尺寸
 
-Althought this theme has integrated with some known image optimization plugins, you way still need to optimize your images for some key pages like homepage.
+虽然本主题已集成了一些知名的图片优化插件，但你可能仍需要为一些关键页面（如首页）优化图片。
 
-A easy way is using online tools like [TinyPNG](https://tinypng.com/) to manually compress your images.
+一个简单的方法是使用在线工具如[TinyPNG](https://tinypng.com/)手动压缩你的图片。
 
-### Adapt External Images
+### 适配外部图片
 
-If you are using external images, excepting the lazy-load tag, you can also add [Astro pre-optimize service](https://docs.astro.build/en/guides/images/#authorizing-remote-images) for it. This will change external images to local optimized ones.
+如果你使用外部图片，除了懒加载标签外，你还可以为它添加[Astro预优化服务](https://docs.astro.build/en/guides/images/#authorizing-remote-images)。这会将外部图片更改为本地优化图片。
 
 ```js title="astro.config.mjs"
 export default defineConfig({
   // ...
   image: {
     // ...
-    domains: ['<specific site domain>'] // [!code ++]
+    domains: ['<特定网站域名>'] // [!code ++]
   }
 })
 ```
 
-<Aside type='caution'>This may have a bad work for svg files.</Aside>
+<Aside type='caution'>这可能对svg文件效果不佳。</Aside>

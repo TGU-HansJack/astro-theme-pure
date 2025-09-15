@@ -1,42 +1,42 @@
 ---
-title: 'Deployment'
-description: 'Deploy your site to various platforms'
+title: '部署'
+description: '将你的网站部署到各种平台'
 order: 3
 ---
 
 import { Aside, Steps } from 'astro-pure/user'
 
-## Package Mode
+## 包模式
 
-This theme which >= v4.0.0 has integrated NPM package mode. Recommended way is remove local package file, and install the theme integration from NPM. If there's some reason you want to change the package content, you should link local package to your theme template. A `bun` method is integrated. You should:
+本主题>=v4.0.0已集成NPM包模式。推荐方式是移除本地包文件，并从NPM安装主题集成。如果有某些原因你想更改包内容，你应该将本地包链接到你的主题模板。已集成`bun`方法。你应该：
 
-1. Add environment variable `BUN_LINK_PKG=true`.
-2. Run `bun pure check` to link the package automatically.
+1. 添加环境变量`BUN_LINK_PKG=true`。
+2. 运行`bun pure check`自动链接包。
 
-This method can also work on Deployment for other platforms like 'Vercel'. All you need is to add the environment variable to build options on your platform control settings. The build command `astro-pure check && astro check && astro build` will automatically link the package.
+此方法也适用于其他平台如"Vercel"的部署。你所需要做的就是在平台控制设置的构建选项中添加环境变量。构建命令`astro-pure check && astro check && astro build`将自动链接包。
 
-## Deployment Mode
+## 部署模式
 
 <Aside type='tip'>
 
-Astro had a very fantastic support for deployment. Check [Deploy your Astro Site](https://docs.astro.build/en/guides/deploy/) for more.
+Astro对部署有很好的支持。查看[部署你的Astro站点](https://docs.astro.build/en/guides/deploy/)了解更多信息。
 
 </Aside>
 
 ### Vercel
 
-This theme supports Vercel by default:
+本主题默认支持Vercel：
 
 <Steps>
 
-1. Push your code to your online Git repository (GitHub, GitLab, BitBucket).
-2. [Import your project](https://vercel.com/new) into Vercel.
-3. Vercel will automatically detect Astro and configure the right settings.
-4. Your application is deployed! (e.g. [astro.vercel.app](https://astro.vercel.app/))
+1. 将你的代码推送到在线Git仓库（GitHub、GitLab、BitBucket）。
+2. 在Vercel中[导入你的项目](https://vercel.com/new)。
+3. Vercel将自动检测Astro并配置正确的设置。
+4. 你的应用程序已部署！（例如[astro.vercel.app](https://astro.vercel.app/)）
 
 </Steps>
 
-And vercel also support static method:
+Vercel也支持静态方法：
 
 ```ts title="astro.config.mjs"
 import vercelServerless from '@astrojs/vercel/serverless' // [!code --]
@@ -49,15 +49,15 @@ export default defineConfig({
 })
 ```
 
-### Node server
+### Node服务器
 
-If you are deploying with Node.js locally, you need to install `@astrojs/node` first:
+如果你在本地使用Node.js部署，你需要先安装`@astrojs/node`：
 
 ```shell
 bun add '@astrojs/node'
 ```
 
-Then follow the comments in `astro.config.ts` and modify like:
+然后按照`astro.config.ts`中的注释并修改如下：
 
 ```ts title="astro.config.ts"
 import node from '@astrojs/node' // [!code ++]
@@ -77,15 +77,15 @@ export default defineConfig({
 })
 ```
 
-### Bun server
+### Bun服务器
 
-Bun also support static method.
+Bun也支持静态方法。
 
-Check [@nurodev/astro-bun](https://www.npmjs.com/package/@nurodev/astro-bun) for more.
+查看[@nurodev/astro-bun](https://www.npmjs.com/package/@nurodev/astro-bun)了解更多信息。
 
-### Static
+### 静态
 
-Remove all server adapter configuration in `astro.config.ts`:
+移除`astro.config.ts`中的所有服务器适配器配置：
 
 ```ts title="astro.config.ts"
 import vercelServerless from '@astrojs/vercel/serverless' // [!code --]
@@ -99,37 +99,36 @@ export default defineConfig({
 
 ### GitHub Pages
 
-See [Astro: Configure Astro for GitHub Pages](https://docs.astro.build/en/guides/deploy/github/).
+参见[Astro: 为GitHub Pages配置Astro](https://docs.astro.build/en/guides/deploy/github/)。
 
-For ones deploying on GitHub Pages with a base path, like `username.github.io/repo-name`, please read [Deployment#Platform with Base Path](/docs/setup/deployment#platform-with-base-path).
-carefully.
+对于在GitHub Pages上使用基础路径部署的用户，如`username.github.io/repo-name`，请仔细阅读[部署#带基础路径的平台](/docs/setup/deployment#platform-with-base-path)。
 
-## Platform with Base Path
+## 带基础路径的平台
 
 <Aside type='danger'>
 
-1. Astro provides basic support for a base path — see the "base" option in the configuration reference [Astro: base](https://docs.astro.build/en/reference/configuration-reference/#base) for more.
-2. This theme will not support the base path, as it seriously break down the experience of remote developments. In general, deploying the template with a base path is not recommended because the homepage integrates lists, resume elements, and other features that rely on the template’s source structure.
-3. If you follow the guide and modify the code, you can deploy with a base path, but you cannot use the same project copy to deploy both with and without a base path simultaneously. Proceed at your own risk; do not open issues about this unless you plan to contribute improvements to the docs.
+1. Astro为基础路径提供基本支持——参见配置参考中的"base"选项[Astro: base](https://docs.astro.build/en/reference/configuration-reference/#base)了解更多信息。
+2. 本主题将不支持基础路径，因为它严重影响远程开发体验。总的来说，不推荐使用基础路径部署模板，因为主页集成了列表、简历元素和其他依赖于模板源结构的功能。
+3. 如果你遵循指南并修改代码，你可以使用基础路径部署，但你不能同时使用同一项目副本部署带和不带基础路径的版本。风险自负；除非你计划贡献文档改进，否则不要就此问题开启议题。
 
 </Aside>
 
-1. Set the `base` option in `astro.config.ts` to your base path, for example:
+1. 在`astro.config.ts`中设置`base`选项为你的基础路径，例如：
 
    ```ts title="astro.config.ts"
    export default defineConfig({
      //   ...
-     base: '/repo-name/' // Replace with your repository name
+     base: '/repo-name/' // 替换为你的仓库名称
    })
    ```
 
-2. Update all internal links in Dynamic script files:
+2. 更新动态脚本文件中的所有内部链接：
    - `src/components/BaseHead.astro`
    - `src/pages/docs/DocsContent.astro`
    - `src/pages/rss.xml.ts`
-   - `packages/pure/components/pages/PostPreview.astro` ([Customize Theme](/docs/advanced/customize) is required to make the change)
+   - `packages/pure/components/pages/PostPreview.astro`（需要[自定义主题](/docs/advanced/customize)才能进行更改）
 
-3. Update all static resource paths:
-   - Add base paths in `src/site.config.ts`. Especially the menu configs.
-   - Add base paths in `src/plugins/shiki-transformers.ts` for all `/icons/code.svg`.
-   - Add base paths in `src/assets/styles/app.css` for all url in `@font-face` property.
+3. 更新所有静态资源路径：
+   - 在`src/site.config.ts`中添加基础路径。特别是菜单配置。
+   - 在`src/plugins/shiki-transformers.ts`中为所有`/icons/code.svg`添加基础路径。
+   - 在`src/assets/styles/app.css`中为`@font-face`属性中的所有url添加基础路径。

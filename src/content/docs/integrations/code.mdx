@@ -1,14 +1,14 @@
 ---
-title: 'Shiki Code'
-description: 'Some methods for better using shiki code'
+title: 'Shiki代码'
+description: '更好地使用shiki代码的一些方法'
 order: 5
 ---
 
 import { MdxRepl } from 'astro-pure/user'
 
-## Basic Usage
+## 基本用法
 
-For `.astro` file:
+对于 `.astro` 文件:
 
 ```astro
 ---
@@ -18,7 +18,7 @@ import { Code } from 'astro:components'
 <Code lang='shell' code={`git log --oneline`} />
 ```
 
-For `.mdx` and `.md` file:
+对于 `.mdx` 和 `.md` 文件:
 
 ````markdown
 ```shell
@@ -26,7 +26,7 @@ git log --oneline
 ```
 ````
 
-## Add Title
+## 添加标题
 
 <MdxRepl width='80%'>
 ```shell title="start.sh"
@@ -48,9 +48,9 @@ bun dev
 </Fragment>
 </MdxRepl>
 
-## Show Diff
+## 显示差异
 
-Supports add and del lines.
+支持添加和删除行。
 
 <MdxRepl width='80%'>
 ```shell title="deploy.sh"
@@ -59,14 +59,14 @@ Supports add and del lines.
 bun check
 bun lint
 bun format # [!code ++]
-# No need for vercel or other ci/cd
+# 不需要vercel或其他ci/cd
 bun run build # [!code --]
 git push
 ```
 
 <Fragment slot='desc'>
 ````markdown
-<!-- You need to delete `\` during the use -->
+<!-- 使用时需要删除 `\` -->
 
 ```shell title="deploy.sh"
 #!/bin/bash
@@ -74,7 +74,7 @@ git push
 bun check
 bun lint
 bun format # [\!code ++]
-# No need for vercel or other ci/cd
+# 不需要vercel或其他ci/cd
 bun run build # [\!code --]
 git push
 ```
@@ -82,15 +82,15 @@ git push
 </Fragment>
 </MdxRepl>
 
-## Show Highlight
+## 显示高亮
 
 <MdxRepl width='80%'>
 ```html
 <!doctype html><html><head><meta name="color-scheme" content="dark"></head><body style='overflow:hidden'> 
-<!-- Highlight a single line -->
+<!-- 高亮单行 -->
 <p style='text-align:center'>君指先跃动の光は、私の一生不変の信仰に、唯私の超电磁炮永生き！</p> <!-- [!code highlight] -->
 
-<!-- You can also highlight multiple lines with a single comment: -->
+<!-- 你也可以用单个注释高亮多行: -->
 <canvas id="can" width="400" height="400" style="background:Black;display:block;margin:20px auto;"></canvas> 
 <script> // [!code highlight:11]
 var sn=[42,41], dz=43, fx=1, n, score=-1, ctx=document.getElementById("can").getContext("2d"), sz=20;
@@ -108,14 +108,14 @@ function draw(t,c) { ctx.fillStyle=c; ctx.fillRect(t%sz*sz+1,~~(t/sz)*sz+1,sz-2,
 
 <Fragment slot='desc'>
 ````markdown
-<!-- You need to delete `\` during the use -->
+<!-- 使用时需要删除 `\` -->
 
 ```html
 <!doctype html><html><head><meta name="color-scheme" content="dark"></head><body style='overflow:hidden'> 
-<!-- Highlight a single line -->
+<!-- 高亮单行 -->
 <p style='text-align:center'>君指先跃动の光は、私の一生不変の信仰に、唯私の超电磁炮永生き！</p> <!-- [\!code highlight] -->
 
-<!-- You can also highlight multiple lines with a single comment: -->
+<!-- 你也可以用单个注释高亮多行: -->
 <canvas id="can" width="400" height="400" style="background:Black;display:block;margin:20px auto;"></canvas> 
 <script> // [\!code highlight:11]
 var sn=[42,41], dz=43, fx=1, n, score=-1, ctx=document.getElementById("can").getContext("2d"), sz=20;

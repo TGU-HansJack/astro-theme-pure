@@ -1,65 +1,64 @@
 ---
-title: 'Update Theme'
-description: 'Update astro theme pure to the latest version'
+title: '更新主题'
+description: '将astro theme pure更新到最新版本'
 order: 1
 ---
 
 import { Aside } from 'astro-pure/user'
 
 <Aside type='caution'>
-  This theme is updated frequently, and updating the theme may be a little bit complex. Please read
-  the following breaking changes carefully.
+  本主题更新频繁，更新主题可能有些复杂。请仔细阅读以下重大变更。
 </Aside>
 
-## Breaking Changes
+## 重大变更
 
 ### v4.0.8
 
-No breaking changes.
+无重大变更。
 
 ### v4.0.7
 
-- Changed the `Button` component to use `variant` prop instead of `style` prop. This can help you add custom styles without conflicts. You should change your code like this:
+- 将 `Button` 组件更改为使用 `variant` 属性而不是 `style` 属性。这可以帮助你添加自定义样式而不会冲突。你应该像这样更改代码：
 
   ```jsx
-  <Button title='My Button' style='primary' /> // [!code --]
-  <Button title='My Button' variant='primary' /> // [!code ++]
+  <Button title='我的按钮' style='primary' /> // [!code --]
+  <Button title='我的按钮' variant='primary' /> // [!code ++]
   ```
 
-- Changed the `ExternalLinks` configuration in `src/site.config.ts`. You should change your config like this:
+- 更改了 `src/site.config.ts` 中的 `ExternalLinks` 配置。你应该像这样更改配置：
 
   ```ts title="src/site.config.ts"
   export const theme: ThemeUserConfig = {
     content: {
       externalLinksContent: ' ↗', // [!code --]
-      /** External links configuration */ // [!code ++]
+      /** 外部链接配置 */ // [!code ++]
       externalLinks: { // [!code ++]
         content: ' ↗', // [!code ++]
-        /** Properties for the external links element */ // [!code ++]
+        /** 外部链接元素的属性 */ // [!code ++]
         properties: { // [!code ++]
           style: 'user-select:none' // [!code ++]
         } // [!code ++]
       }, // [!code ++]
-      /** Blog page size for pagination (optional) */
+      /** 博客分页页面大小（可选） */
       blogPageSize: 8,
-      externalLinkArrow: true // show external link arrow // [!code --]
+      externalLinkArrow: true // 显示外部链接箭头 // [!code --]
     }
   }
   ```
 
-  - Changed the Waline files out of package! Checkout [Commit 5119694](https://github.com/cworld1/astro-theme-pure/commit/5119694ab3e32b600887dca30650bcbc63da3f7b) to see how to change your existing pages & layouts. Don't forget to copy files at `src/components/waline` to your project.
+  - 将Waline文件移出包外！查看[提交 5119694](https://github.com/cworld1/astro-theme-pure/commit/5119694ab3e32b600887dca30650bcbc63da3f7b)了解如何更改现有页面和布局。别忘了将 `src/components/waline` 中的文件复制到你的项目中。
 
 ### v4.0.6
 
-- Changed the project card var name to `projects` instead of `project`.
+- 将项目卡片变量名从 `project` 更改为 `projects`。
 
 ### v4.0.5
 
-- Changed the UnoCSS preset from `Wind3` to `Mini`. Some features are removed, like `gradient`, `animation`, `container`, etc.
+- 将UnoCSS预设从 `Wind3` 更改为 `Mini`。一些功能被移除，如 `gradient`、`animation`、`container` 等。
 
 ### v4.0.3
 
-- Changed footer registration config to `links`. This will give you more flexibility to add more links or other information:
+- 将页脚注册配置更改为 `links`。这将给你更多灵活性来添加更多链接或其他信息：
 
   ```ts title="src/site.config.ts"
   export const theme: ThemeUserConfig = {
@@ -68,12 +67,12 @@ No breaking changes.
         {
           title: 'Moe ICP 114514',
           link: 'https://icp.gov.moe/?keyword=114514',
-          style: 'text-sm' // Uno/TW CSS class
+          style: 'text-sm' // Uno/TW CSS 类
         },
         {
-          title: 'Site Policy',
+          title: '站点政策',
           link: '/terms/list',
-          pos: 2 // position set to 2 will be appended to copyright line
+          pos: 2 // 位置设置为2将附加到版权行
         }
       ]
     }
@@ -82,40 +81,40 @@ No breaking changes.
 
 ### v4.0.2-beta
 
-- Consider moving tool icons to a new path such as `src/assets/tools/`; this may help users know which ones are relevant to tools.
-- Changed links `applyTip` to a custom array style:
+- 考虑将工具图标移动到新路径如 `src/assets/tools/`；这可能帮助用户知道哪些与工具相关。
+- 将链接 `applyTip` 更改为自定义数组样式：
 
   ```ts title="src/site.config.ts"
   export const integ: IntegrationUserConfig = {
     links: {
       applyTip: [
-        { name: 'Name', val: theme.title }, // [!code highlight:4]
-        { name: 'Desc', val: theme.description || 'Null' },
-        { name: 'Link', val: 'https://astro-pure.js.org/' },
-        { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
-        // You can also add more fields
+        { name: '名称', val: theme.title }, // [!code highlight:4]
+        { name: '描述', val: theme.description || '空' },
+        { name: '链接', val: 'https://astro-pure.js.org/' },
+        { name: '头像', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+        // 你也可以添加更多字段
       ]
     }
   }
   ```
 
-- Add the env variable `BUN_LINK_PKG`. Set this to `true` to automatically refer to the package `astro-pure` in the path `packages/pure` instead of `node_modules/astro-pure`. This may help users develop the theme or change code for themselves (not recommended for production).
-- Changed the CSS framework to UnoCSS. This will affect `unocss.config.ts` and typography class name settings.
+- 添加环境变量 `BUN_LINK_PKG`。将其设置为 `true` 以自动引用路径 `packages/pure` 中的包 `astro-pure` 而不是 `node_modules/astro-pure`。这可能帮助用户开发主题或为自己更改代码（不推荐用于生产）。
+- 将CSS框架更改为UnoCSS。这将影响 `unocss.config.ts` 和排版类名设置。
 
 ### v4.0.1-beta
 
-- Changed svg deliver import to custom import svg element. This will affect using component for `ToolSelection`. You should change:
+- 将svg传递导入更改为自定义导入svg元素。这将影响 `ToolSelection` 的使用组件。你应该更改：
 
-  (Optional) Move icons to new path like `src/assets/icons/`
+  （可选）将图标移动到新路径如 `src/assets/icons/`
 
-  Then change using code (default at `src/pages/about/index.astro`)
+  然后更改使用代码（默认在 `src/pages/about/index.astro`）
 
   ```ts title="src/pages/about/index.astro"
   <ToolSection
     tools={[
       {
         name: 'Arch Linux',
-        description: 'Linux Distribution',
+        description: 'Linux发行版',
         href: 'https://archlinux.org/',
         iconPath: 'archlinux' // [!code --]
         icon: import('@/assets/icons/archlinux.svg?raw') // [!code ++]
@@ -124,34 +123,34 @@ No breaking changes.
   />
   ```
 
-- This changes import a new component `Svg`. See [User Components #Svg Loader](/docs/integrations/components#svg-loader) for usage.
+- 此更改导入了新组件 `Svg`。参见[用户组件 #Svg加载器](/docs/integrations/components#svg-loader)了解用法。
 
 ### v4.0.0-alpha
 
-- Move all components, types and utils that are reused to new npm packages `astro-pure`. Affected components are included in . Import method is also changed:
+- 将所有重复使用的组件、类型和工具移动到新的npm包 `astro-pure`。受影响的组件包含在内。导入方法也已更改：
 
   ```ts
   import { Button } from '@/components/user' // [!code --]
   import { Button } from 'astro-pure/user' // [!code ++]
   ```
 
-- New format config file `src/site.config.ts`. There will be zod schema to validate the config file, and use of config will be changed to:
+- 新格式配置文件 `src/site.config.ts`。将有zod模式来验证配置文件，配置的使用也将更改：
 
   ```ts
   import { siteConfig } from '@/site-config' // [!code --]
   import config from '@/site-config' // [!code ++]
-  // Or if you want to use the config that is after processed or transformed
+  // 或者如果你想使用处理或转换后的配置
   import config from 'virtual:config' // [!code ++]
   ```
 
-- Built-in astro config supported. package `astro-pure` will automatically config some integrations like `unocss/astro`, `@astrojs/mdx`, `@astrojs/sitemap`, also with some rehypePlugins and remarkPlugins.
-- Changed search engine to [pagefind](https://pagefind.app/), mainly because Astro v5 will not allow getting collection data directly from client (that is core working mode of Fuse.js search engine).
-- Changed some `BaseHead` tags config to `src/site.config.ts`.
+- 内置astro配置支持。包 `astro-pure` 将自动配置一些集成如 `unocss/astro`、`@astrojs/mdx`、`@astrojs/sitemap`，以及一些rehypePlugins和remarkPlugins。
+- 将搜索引擎更改为[pagefind](https://pagefind.app/)，主要是因为Astro v5将不允许直接从客户端获取集合数据（这是Fuse.js搜索引擎的核心工作方式）。
+- 将一些 `BaseHead` 标签配置更改为 `src/site.config.ts`。
 
 ### v3.1.4
 
-- Move config `siteConfig.content.typographyProse` to `integrationConfig.typography.class` in `src/site.config.ts`.
-- Move advanced components to `src/components/advanced`. Affected components are included in [Advanced Components](/docs/integrations/advanced). Import method is also changed:
+- 将配置 `siteConfig.content.typographyProse` 移动到 `src/site.config.ts` 中的 `integrationConfig.typography.class`。
+- 将高级组件移动到 `src/components/advanced`。受影响的组件包含在[高级组件](/docs/integrations/advanced)中。导入方法也已更改：
 
   ```ts
   import LinkPreview from '@/components/LinkPreview.astro' // [!code --]
@@ -160,82 +159,82 @@ No breaking changes.
   <LinkPreview href='https://www.cloudflare.com/' />
   ```
 
-- Move `Substats` config to related page `src/pages/about/index.astro`.
-- Changed Github Card component to `GithubCard` in `src/components/advanced`. See [Advanced Components #Github Card](http://localhost:4321/docs/integrations/advanced#github-card) for usage.
-- Move Links Logbook to `src/site.config.ts`. See [Friend Links #Basic Configurations](/docs/integrations/links#basic-configurations).
+- 将 `Substats` 配置移动到相关页面 `src/pages/about/index.astro`。
+- 将Github卡片组件更改为 `src/components/advanced` 中的 `GithubCard`。参见[高级组件 #Github卡片](http://localhost:4321/docs/integrations/advanced#github-card)了解用法。
+- 将链接日志移动到 `src/site.config.ts`。参见[友情链接 #基本配置](/docs/integrations/links#basic-configurations)。
 
 ### v3.1.3
 
-- Move user components to `src/components/user`. Affected components are included in [User Components](/docs/integrations/components). Import method is also changed:
+- 将用户组件移动到 `src/components/user`。受影响的组件包含在[用户组件](/docs/integrations/components)中。导入方法也已更改：
 
   ```ts
   import Button from '@/components/Button' // [!code --]
   import { Button } from 'astro-pure/user' // [!code ++]
   ```
 
-- Replace `remark-github-blockquote-alert` plugin to component `Aside`. Check [User Components #Aside](/docs/integrations/components#aside) to know how to migrate.
+- 将 `remark-github-blockquote-alert` 插件替换为组件 `Aside`。查看[用户组件 #Aside](/docs/integrations/components#aside)了解如何迁移。
 
-### v3.1.2 (pre-release)
+### v3.1.2 (预发布)
 
-- Move some configuration items like `telegram`, `walineServerURL` to new structure in `src/site.config.ts`.
+- 将一些配置项如 `telegram`、`walineServerURL` 移动到 `src/site.config.ts` 中的新结构。
 
 ### v3.1.1
 
-- Move the internal parts in the `src/utils` to `src/plugins`.
-- Modify the configuration file `astro.config.ts` to `astro.config.mjs`.
-- Update ESLint to latest version and migrate configuration file `.eslintrc.js` to `eslint.config.mjs`.
-- Modify the `prettier.config.js` to `prettier.config.mjs`.
+- 将 `src/utils` 中的内部部分移动到 `src/plugins`。
+- 修改配置文件 `astro.config.ts` 为 `astro.config.mjs`。
+- 更新ESLint到最新版本并将配置文件 `.eslintrc.js` 迁移到 `eslint.config.mjs`。
+- 将 `prettier.config.js` 修改为 `prettier.config.mjs`。
 
-### v3.1.0 (pre-release)
+### v3.1.0 (预发布)
 
-- Changed common content markdown formatter `coverImage` to `heroImage`. You need to modify all your markdown files to replace `coverImage` with `heroImage`.
+- 将通用内容markdown格式化器 `coverImage` 更改为 `heroImage`。你需要修改所有markdown文件将 `coverImage` 替换为 `heroImage`。
 
 ### v3.0.9
 
-A stable version.
+稳定版本。
 
-Pending update...
+待更新...
 
-## Update Method
+## 更新方法
 
-### Rebase
+### 变基
 
-If you create a new project using fork, you can just rebase the theme repository to the latest version.
+如果你使用fork创建了新项目，你可以直接将主题仓库变基到最新版本。
 
-### Merge Manually
+### 手动合并
 
-As the git histories are not the same, you might need to merge the theme repository into your project manually.
+由于git历史记录不同，你可能需要手动将主题仓库合并到你的项目中。
 
-A practical way for Windows users is to use the tool [WinMerge](https://winmerge.org/).
+Windows用户的一个实用方法是使用工具[WinMerge](https://winmerge.org/)。
 
-A filter list may be helpful:
+过滤器列表可能有帮助：
 
 ```diff
-## This is a directory/file filter template for WinMerge
+## 这是WinMerge的目录/文件过滤器模板
 name: Astro Theme Pure
-desc: Diff for Blog v.s. Astro Theme Pure
+desc: 博客与Astro Theme Pure的差异
 
-## Select if filter is inclusive or exclusive
-## Inclusive (loose) filter lets through all items not matching rules
-## Exclusive filter lets through only items that match to rule
-## include or exclude
+## 选择过滤器是包含还是排除
+## 包含（宽松）过滤器允许所有不匹配规则的项目通过
+## 排除过滤器只允许匹配规则的项目通过
+## include 或 exclude
 def: include
 
-## Filters for filenames begin with f:
-## Filters for directories begin with d:
-## To exclude some of the files that match the f: pattern, specify f!:
-## To exclude some of the folders that match the d: pattern, specify d!:
-## (Inline comments begin with " ##" and extend to the end of the line)
+## 文件名的过滤器以 f: 开头
+## 目录的过滤器以 d: 开头
+## 要排除一些匹配 f: 模式的文件，请指定 f!:
+## 要排除一些匹配 d: 模式的文件夹，请指定 d!:
+## (内联注释以 " ##" 开头并延伸到行尾)
 
-### Front-end files ###
+### 前端文件 ###
 d: \\\.git$
 d: \\node_modules$
 
-# Astro cache
+# Astro缓存
 d: \\\.vercel
 d: \\\.astro
 
-### Theme dev ###
+### 主题开发 ###
 d: ^\\packages$
 d: ^\\preset$
 d: ^\\test$
@@ -244,28 +243,28 @@ f: ^README\.md$
 f: ^README-zh-CN\.md$
 f: ^CODE_OF_CONDUCT\.md$
 
-# Project
+# 项目
 f: ^bun\.lockb$
 f: \.code-workspace$
 f: ^ignore\.md$
 
-### Astro theme pure ###
-# Static
+### Astro主题纯 ###
+# 静态
 d: ^\\public\\favicon$
 f: ^public\\links\.json$
 f: ^public\\images\\social-card\.png$
 
-# Assets
+# 资源
 f: ^src\\assets\\avatar\.png$
 d: ^\\src\\assets\\projects$
 d: ^\\src\\assets\\tools$
 
-# Content
+# 内容
 d: ^\\src\\content\\blog$
 d: ^\\src\\content\\docs$
 d: ^\\src\\pages\\docs$
 f: ^src\\pages\\terms\\.*\.md$
 
-### Blog ###
-# Your own files
+### 博客 ###
+# 你自己的文件
 ```

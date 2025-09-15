@@ -1,36 +1,36 @@
 ---
-title: 'Customize Theme'
-description: 'Custom theme by yourself'
+title: '自定义主题'
+description: '自己定制主题'
 order: 2
 ---
 
 import { Aside, Spoiler, Steps } from 'astro-pure/user'
 
-## You Should Know
+## 你需要知道
 
-This theme is designed to "NPM Package" for the following reasons:
+本主题设计为"NPM包"形式，原因如下：
 
-1. The code written in package may be frequently changed. If users change them at will, it will significantly increase the cost of subsequent updates and merging (various conflicts for code)
-2. Roll back and switch between different versions easily, to maintain user stability
-3. Reduce system coupling & increase reuse ability
-4. The NPM Package mode can be used as a "Astro plugin" to append additional operations that enhance user experience during the build phase
-5. Support some built-in commands like new, check, info, etc.
-6. Use as component library for other Astro projects (yes, this project can be broken down into the UI component library): [Package details](https://www.npmjs.com/package/astro-pure).
+1. 包中的代码可能会频繁更改。如果用户随意更改，将显著增加后续更新和合并的成本（各种代码冲突）
+2. 轻松回滚和在不同版本间切换，以保持用户稳定性
+3. 降低系统耦合度并增加复用能力
+4. NPM包模式可以作为"astro插件"，在构建阶段附加额外操作以增强用户体验
+5. 支持一些内置命令，如new、check、info等
+6. 可作为其他astro项目的组件库使用（是的，该项目可以分解为UI组件库）：[包详情](https://www.npmjs.com/package/astro-pure)。
 
-Before you customize it, you should check [`site.config.ts`](/docs/setup/configuration#theme-configuration) to make sure there is no option that satisfy your need.
+在自定义之前，你应该检查 [`site.config.ts`](/docs/setup/configuration#theme-configuration) 以确保没有能满足你需求的选项。
 
 ## Swizzling
 
-This theme chose an elegant method called 'Swizzling', which is inspired by the design from [Docusaurus](https://docusaurus.io/docs/swizzling).
+本主题选择了一种优雅的方法，称为'Swizzling'，灵感来自[Docusaurus](https://docusaurus.io/docs/swizzling)的设计。
 
-1. Use an IDE to quickly view the source code corresponding to a certain component (In VSCode, it is to click the component with <kbd>Ctrl</kbd>).
-2. Copy to `src/components/<your prefer directory>`.
-3. After modification, change the corresponding reference to your own file path.
+1. 使用IDE快速查看对应某个组件的源代码（在VSCode中，按住<kbd>Ctrl</kbd>点击组件）。
+2. 复制到 `src/components/<你的首选目录>`。
+3. 修改后，将相应的引用更改为自己的文件路径。
 
-Let's make an example to customize the `Footer` component:
+让我们以自定义 `Footer` 组件为例：
 
 <Steps>
-1. Search the `Footer` in your project code:
+1. 在项目代码中搜索 `Footer` 组件：
 
    ```astro title="src/layout/BaseLayout.astro"
    ---
@@ -40,7 +40,7 @@ Let's make an example to customize the `Footer` component:
    ---
    ```
 
-2. Find it in theme source code:
+2. 在主题源代码中找到它：
 
    ```ts title="node_modules/astro-theme-pure/components/basic/index.ts"
    export { default as Footer } from './Footer.astro'
@@ -48,15 +48,15 @@ Let's make an example to customize the `Footer` component:
    export { default as ThemeProvider } from './ThemeProvider.astro'
    ```
 
-   Then you get the `Footer` component source code at `node_modules/astro-theme-pure/components/basic/Footer.astro`.
+   然后你会在 `node_modules/astro-theme-pure/components/basic/Footer.astro` 找到 `Footer` 组件的源代码。
 
-3. Copy the `Footer.astro` file to your project:
+3. 将 `Footer.astro` 文件复制到你的项目中：
 
    ```bash
    cp node_modules/astro-theme-pure/components/basic/Footer.astro src/components/custom/Footer.astro
    ```
 
-4. Solve the sub-dependencies problem:
+4. 解决子依赖问题：
 
    ```astro title="src/components/custom/Footer.astro"
    ---
@@ -68,7 +68,7 @@ Let's make an example to customize the `Footer` component:
    ---
    ```
 
-5. Change the reference in `BaseLayout.astro`:
+5. 修改 `BaseLayout.astro` 中的引用：
 
    ```astro title="src/layout/BaseLayout.astro"
     ---
@@ -81,22 +81,22 @@ Let's make an example to customize the `Footer` component:
 
 </Steps>
 
-Then you've done a "localization" of the component.
+然后你就完成了组件的"本地化"。
 
-## Package mode
+## 包模式
 
-<Aside type='danger' title={'Use at Your Own Risk'.toUpperCase()}>
-Keep cautious for change the underlying code <Spoiler>~~底层代码不可突破，祖宗之法不可变~~</Spoiler>, unless you know what you are doing. You should know and accept any risks & difficulties for making project complex.
+<Aside type='danger' title={'使用风险自负'.toUpperCase()}>
+谨慎更改底层代码 <Spoiler>~~底层代码不可突破，祖宗之法不可变~~</Spoiler>，除非你知道自己在做什么。你应该了解并接受任何使项目复杂化的风险和困难。
 </Aside>
 
-If you want to make some breaking changes or just make a test, this method may follow "what you see is what you get".
+如果你想做一些突破性更改或只是进行测试，这种方法可能遵循"所见即所得"。
 
-1. Making sure you have the original theme code (`./packages/pure`). If yo've deleted it, download it from the [Releases](https://github.com/cworld1/astro-theme-pure/releases).
-2. Link it to your project using your package manager.
-3. Then change the theme code as it is a part of your code!
+1. 确保你有原始主题代码（`./packages/pure`）。如果你已删除，从[Releases](https://github.com/cworld1/astro-theme-pure/releases)下载。
+2. 使用你的包管理器将其链接到你的项目。
+3. 然后像更改自己代码一样更改主题代码！
 
 <Aside type='tip'>
-For bun user, please refer to [Deployment#Package Mode](/docs/setup/deployment#package-mode)
+对于bun用户，请参考[部署#包模式](/docs/setup/deployment#package-mode)
 
-This can also help you correctly build your project on cloud CI/CD.
+这也可以帮助你在云CI/CD上正确构建项目。
 </Aside>

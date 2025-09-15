@@ -1,22 +1,22 @@
 ---
-title: 'FAQs'
-description: 'Frequently asked questions'
+title: '常见问题'
+description: '常见问题解答'
 order: 4
 ---
 
-## Routes
+## 路由
 
-### Blog specific route
+### 博客特定路由
 
-Routing blogs format like `/blog/:year/:id`
+博客路由格式如 `/blog/:year/:id`
 
-See [4.0.2-beta如何使文章链接中包含年份](https://github.com/cworld1/astro-theme-pure/discussions/37#discussioncomment-11905851).
+参见 [4.0.2-beta如何使文章链接中包含年份](https://github.com/cworld1/astro-theme-pure/discussions/37#discussioncomment-11905851)。
 
-## Content
+## 内容
 
-### Support web images for `heroImage`
+### `heroImage`支持网络图片
 
-It should be used with `inferSize: true` to get the image size. Example:
+应该与 `inferSize: true` 一起使用以获取图片尺寸。例如：
 
 ```yaml
 heroImage:
@@ -25,17 +25,17 @@ heroImage:
 
 ## Vite
 
-### Vite Block Request
+### Vite阻止请求
 
 ```log
 Blocked request. This host ("xxx")is not allowed.
 To allow this host, add "xxx" to `preview.allowedHosts` in vite.config.js.
 ```
 
-See [option server.allowedHosts doesn't take into account "true"](https://github.com/vitejs/vite/issues/19242)
+参见 [option server.allowedHosts doesn't take into account "true"](https://github.com/vitejs/vite/issues/19242)
 
-## Packages
+## 包
 
-### Problem with `BUN_LINK_PKG`
+### `BUN_LINK_PKG`问题
 
-See [BUN_LINK_PKG 环境变量无法设置成功](https://github.com/cworld1/astro-theme-pure/issues/51)
+参见 [BUN_LINK_PKG 环境变量无法设置成功](https://github.com/cworld1/astro-theme-pure/issues/51)
